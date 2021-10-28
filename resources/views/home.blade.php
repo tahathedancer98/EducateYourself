@@ -16,13 +16,19 @@
                             </span>
                         </h1>
                         <div class="row">
-                            <div class="col-md-6">
-                                <a href="{{route('contact')}}">
-                                    <button class="btn btn-info">
-                                        Demander un compte
-                                    </button>
-                                </a>
-                            </div>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                                <div class="col-md-6">
+                                    Bienvenue <span style="color: crimson">{{\Illuminate\Support\Facades\Auth::User()->prenom}}</span>
+                                </div>
+                            @else
+                                <div class="col-md-6">
+                                    <a href="{{route('contact')}}">
+                                        <button class="btn btn-info">
+                                            Demander un compte
+                                        </button>
+                                    </a>
+                                </div>
+                            @endif
                             <div class="col-md-6">
                                 <a href="{{route('formationList')}}">
                                     <button class="btn btn-light" style="background-color: #e3f2fd;">

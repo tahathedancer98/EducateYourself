@@ -13,7 +13,7 @@
     <title>EducateYoursef</title>
 </head>
 <body>
-
+<!-- Header -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom: 3em;">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('homeView')}}">EducateYourself</a>
@@ -32,9 +32,6 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-center">
-                    <li><a class="btn btn-outline-success" href="{{route('contact')}}"><span class="glyphicon glyphicon-user"></span> Contact</a></li>
-                </ul>
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <li class="nav-item">{{\Illuminate\Support\Facades\Auth::User()->firstname}}</li>
                     <li class="nav-item">
@@ -47,16 +44,39 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{route('login')}}" class="btn btn-outline-success "><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a class="btn btn-outline-success" href="{{route('contact')}}"><span class="glyphicon glyphicon-user"></span> Contact</a></li>
+                    </ul>
                 @endif
             </ul>
 
         </div>
     </div>
 </nav>
+<!-- Header -->
 
-
+<!-- Body -->
 @yield('content')
 
+    @if(session('success'))
+        <div class="col-md-4 offset-md-4">
+            <div class="login-form bg-light mt-4 p-4">
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            </div>
+        </div>
+    @endif
+    @if(session('error'))
+        <div class="col-md-4 offset-md-4">
+            <div class="login-form bg-light mt-4 p-4">
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            </div>
+        </div>
+    @endif
+<!-- Body -->
 
 <!-- Footer -->
 <footer class="bg-dark text-center text-white" style="margin-top: 3em;">
@@ -95,7 +115,7 @@
         <!-- Section: Text -->
         <section class="mb-4">
             <p>
-                Ceci est la réalisation du projet FORMATION que j'ai nommé EducateYoursef durant ma formation <b>Master 1</b> en <i>alternance</i> 1 à l'école <i>H3 Hitema</i>.
+                Ceci est la réalisation du projet FORMATION que j'ai nommé EducateYoursef durant ma formation <b>Master 1</b> en <i>alternance</i> à l'école <i>H3 Hitema</i>.
             </p>
         </section>
         <!-- Section: Text -->

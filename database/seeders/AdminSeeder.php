@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Formation;
+use App\Models\Admin;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
-class FormationSeeder extends Seeder
+class AdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +14,6 @@ class FormationSeeder extends Seeder
      */
     public function run()
     {
-        Formation::factory()->count(10)->create();
-
+        Admin::factory()->create();
     }
 }

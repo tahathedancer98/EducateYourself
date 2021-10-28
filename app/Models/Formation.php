@@ -11,4 +11,10 @@ class Formation extends Model
     protected $table = 'formations';
     protected $fillable = ['nom', 'description', 'prix', 'image','type','user_id'];
 
+    public function categories(){
+        return $this->belongsToMany(Categorie::class,'formations_categories','formation','categorie');
+    }
+    public function chapitres(){
+        return $this->belongsToMany(Chapitre::class,'formations_chapitres','formation','chapitre');
+    }
 }
