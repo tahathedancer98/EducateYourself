@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
@@ -10,19 +12,27 @@ use Illuminate\Support\Facades\Route;
 //La page d'accueil :
 Route::get('/',[HomeController::class,'index'])->name('homeView');
 
-//Routes qui s'occupent de lister toutes les formations (Get)
-Route::get('/formations', [FormationController::class, 'index'])->name('formationList');
-// Ajouter une nouvelle formation
-Route::get('/formations/ajouter', [FormationController::class, 'add'])->name('formationAdd');
-Route::post('/formations/ajouter}', [FormationController::class, 'store'])->name('formationStore');
+// Pour la partie VISITEURS
+Route::get('/formations/visiteurs', [FormationController::class, 'indexVisiteurs'])->name('formationListVisiteurs');
+Route::get('/formations/{id}/visiteurs',[FormationController::class,'detailsFormationVisiteurs'])->name('formationDetailVisiteurs');
 
-//Route qui va afficher le détail d'une formation (Get)
-Route::get('/formations/{id}', [FormationController::class, 'details'])->name('formationDetails');
+Route::get('/formations/visiteurs/chapitre/{id}', [ChapitreController::class,'details'])->name('chapitreFormation');
+// Pour la partie FORMATEUR (Utilisateur, ajouter/modifier/supprimer)
+Route::get('/formations', [FormationController::class, 'index'])->name('formationList')->middleware(['auth']);
+Route::get('/formations/ajouter', [FormationController::class, 'add'])->name('formationAdd')->middleware(['auth']);
+Route::post('/formations/ajouter}', [FormationController::class, 'store'])->name('formationStore')->middleware(['auth']);
+Route::put('/formations/{id}', [FormationController::class, 'update'])->name('formationUpdate')->middleware(['auth']);
+Route::get('/formations/{id}', [FormationController::class, 'details'])->name('formationDetails')->middleware(['auth']);
 
-Route::get('/formations/{nom}', [FormationController::class, 'detailsNom'])->name('formationDetailsNOM');
-Route::put('/formations/{id}/modifer', [FormationController::class, 'update'])->name('formationUpdate');
-Route::put('/formations/{id}/modifier/image',[FormationController::class, 'updateImage'])->name('formationUpdateImage');
-Route::delete('/formations/{id}', [FormationController::class, 'delete'])->name('formationDelete');
+Route::put('/formations/{id}/image',[FormationController::class, 'updateImage'])->name('formationUpdateImage')->middleware(['auth']);
+Route::delete('/formations/{id}', [FormationController::class, 'delete'])->name('formationDelete')->middleware(['auth']);
+
+
+Route::get('/categories',[CategorieController::class, 'index'])->name('categoriesList')->middleware(['auth']);
+Route::get('/categories/ajouter',[CategorieController::class, 'add'])->name('categorieAdd')->middleware(['auth']);
+Route::post('/categories/ajouter',[CategorieController::class, 'store'])->name('categorieStore')->middleware(['auth']);
+Route::put('/categories/{id}',[CategorieController::class, 'update'])->name('categorieUpdate')->middleware(['auth']);
+Route::delete('/categories/{id}',[CategorieController::class, 'delete'])->name('categorieDelete')->middleware(['auth']);
 
 
 //Routes qui s'occupent de la gestion d'envoie des mails pour la générations des comptes formateurs (get/post)

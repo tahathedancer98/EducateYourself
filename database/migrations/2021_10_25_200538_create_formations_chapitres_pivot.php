@@ -15,14 +15,17 @@ class CreateFormationsChapitresPivot extends Migration
     {
         Schema::create('formations_chapitres', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('formation')->index();
-            $table->unsignedBigInteger('chapitre')->index();
+            $table->unsignedBigInteger('formation')->index()->nullable();
+            $table->unsignedBigInteger('chapitre')->index()->nullable();
             $table->foreign('formation')
                 ->references('id')
-                ->on('formations');
+                ->on('formations')
+                ->onDelete('SET NULL');
+
             $table->foreign('chapitre')
                 ->references('id')
-                ->on('chapitres');
+                ->on('chapitres')
+                ->onDelete('SET NULL');
         });
     }
 

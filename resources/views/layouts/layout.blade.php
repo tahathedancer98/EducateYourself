@@ -10,6 +10,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     --}}
+    <style>
+        #listCards:hover{
+            box-shadow: 5px 5px 5px #2d3748;
+            transform: scale(1.1);
+
+        }
+        #listCards{
+            text-align: center;
+            text-decoration: none;
+            background-color: #312742;
+            color:white;
+        }
+        #headerVisiteurs{
+            background-image:linear-gradient(#74D8C3, #312742);
+            margin-left: 0em;
+            margin-right: 4em;
+            color:#e3f2fd;
+        }
+        .chapitres:hover{
+            background-color: #4a5568;
+            color: white;
+        }
+    </style>
     <title>EducateYoursef</title>
 </head>
 <body>
@@ -22,30 +45,46 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="{{route('formationList')}}" class="btn btn-outline-success" style="margin-right: 3px">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                            </svg>
-                            Formations
-                        </a>
-                    </li>
-                </ul>
                 @if(\Illuminate\Support\Facades\Auth::check())
-                    <li class="nav-item">{{\Illuminate\Support\Facades\Auth::User()->firstname}}</li>
-                    <li class="nav-item">
-                        <form method="post" action="{{route('logout')}}">
-                            @csrf
-                            <button type="submit" class="btn btn-danger">Déconnexion</button>
-                        </form>
-                    </li>
-                @else
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{route('login')}}" class="btn btn-outline-success "><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="{{route('formationList')}}" class="btn btn-outline-success" style="margin-right: 3px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                                </svg>
+                                Formations
+                            </a>
+                        </li>
+                        <li class="nav-item">{{\Illuminate\Support\Facades\Auth::User()->firstname}}</li>
+                        <li class="nav-item">
+                            <form method="post" action="{{route('logout')}}">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Déconnexion</button>
+                            </form>
+                        </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-center">
-                        <li><a class="btn btn-outline-success" href="{{route('contact')}}"><span class="glyphicon glyphicon-user"></span> Contact</a></li>
+                @else
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="{{route('formationListVisiteurs')}}" class="btn btn-outline-success" style="margin-right: 3px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                                </svg>
+                                Formations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('login')}}" class="btn btn-outline-success ">
+                                <span class="glyphicon glyphicon-log-in"></span>
+                                Se connecter
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-outline-success" href="{{route('contact')}}">
+                                <span class="glyphicon glyphicon-user"></span>
+                                Contact
+                            </a>
+                        </li>
                     </ul>
                 @endif
             </ul>

@@ -24,7 +24,12 @@ class FormationUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required|image'
+            'nom' => 'required|string|min:5|max:25',
+            'description' => 'required|string',
+            'prix' => 'required|string|min:1|max:5',
+            'type' => 'required|string',
+            'user_id' => 'int',
+            'checkboxCategories' => 'nullable'
         ];
     }
 }

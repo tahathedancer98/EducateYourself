@@ -15,14 +15,16 @@ class CreateFormationsCategoriesTable extends Migration
     {
         Schema::create('formations_categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('formation')->index();
-            $table->unsignedBigInteger('categorie')->index();
+            $table->unsignedBigInteger('formation')->index()->nullable();
+            $table->unsignedBigInteger('categorie')->index()->nullable();
             $table->foreign('formation')
                 ->references('id')
-                ->on('formations');
+                ->on('formations')
+                ->onDelete('SET NULL');
             $table->foreign('categorie')
                 ->references('id')
-                ->on('categories');
+                ->on('categories')
+                ->onDelete('SET NULL');
         });
     }
 

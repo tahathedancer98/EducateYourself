@@ -2,8 +2,7 @@
 
 @section('content')
 
-    {{--sizeof($formations)--}}
-    @if(1 > 0)
+    @if(sizeof($formations) && \Illuminate\Support\Facades\Auth::check())
         <div class="row" style="margin:5em;">
             <div class="col-md-6">
                 <div class="card">
@@ -22,57 +21,35 @@
             </div>
             <div class="col-md-6">
                 Recherche :
-                <form method="get" action="{{route('formationDetailsNOM', 'Repellat ipsam qui veniam delectus.')}}"
-                      enctype="multipart/form-data"
-                >
-                    @csrf
-                    <div class="form-group">
-                        <label>Nom</label>
-                        <input type="text" required name="nom" class="form-control" >
-                        <button type="submit" class="btn btn-secondary">Valider</button>
-                    </div>
-                </form>
             </div>
             @foreach($formations as $formation)
                 <div class="col-md-4">
-                        <div class="card">
-                            <img src="{{asset("storage/$formation->image")}}"
-                                 class="card-img-top"
-                                 height="200"
-                                 style="object-fit: cover"
-                            />
-                            <div class="card-body">
-                                <a href="{{route('formationDetails', $formation->id)}}" style="text-decoration:none; color: darkolivegreen; ">
-                                    <h5 class="card-title">{{$formation->nom}}</h5>
-                                </a>
-                                <p>{{$formation->prix}} €</p>
-                                <h6>Catégories :</h6>
-                                <div>
-                                    @foreach($formation->categories as $categorie)
-                                        <span>{{$categorie->name}}</span>
-                                    @endforeach
-                                </div>
-                                <h6>Chapitres :</h6>
-                                <div>
-                                    @foreach($formation->chapitres as $chapitre)
-                                        <span>{{$chapitre->name}}</span>
-                                    @endforeach
-                                </div>
-                                {{--
-                                <div class="d-flex">
-                                    <a href="#" class="btn btn-primary">Détails</a>
-
-                                    @if(\Illuminate\Support\Facades\Auth::check())
-                                        <form method="post" action="{{route('postDelete', $post->id)}}" >
+                        <div class="card" id="listCards">
+                            <a href="{{route('formationDetails', $formation->id)}}" style="text-decoration:none;">
+                                <img src="{{asset("storage/$formation->image")}}"
+                                     class="card-img-top"
+                                     height="200"
+                                     style="object-fit: cover"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color:#E8D5B5;">{{$formation->nom}}</h5>
+                                    <p class="card-text" style="color:#AFA8BA;">{{$formation->prix}} €</p>
+                                    <h6 class="card-title" style="color:#DEEEF3;">Catégories</h6>
+                                    <div>
+                                        @foreach($formation->categories as $categorie)
+                                            <span style="color:#AFA8BA;"> {{$categorie->name}} /</span>
+                                        @endforeach
+                                    </div>
+                                    <span style="color:#DEEEF3;">{{count($formation->chapitres)}} Chapitre(s)</span>
+                                    <div class="d-flex">
+                                        <form method="post" action="{{route('formationDelete', $formation->id)}}" >
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger" type="submit">Supprimer</button>
                                         </form>
-                                    @endif
-
+                                    </div>
                                 </div>
-                                --}}
-                            </div>
+                            </a>
                         </div>
                 </div>
             @endforeach

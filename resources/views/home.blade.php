@@ -29,13 +29,23 @@
                                     </a>
                                 </div>
                             @endif
-                            <div class="col-md-6">
-                                <a href="{{route('formationList')}}">
-                                    <button class="btn btn-light" style="background-color: #e3f2fd;">
-                                        Voir les formations
-                                    </button>
-                                </a>
-                            </div>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                                <div class="col-md-6">
+                                    <a href="{{route('formationList')}}">
+                                        <button class="btn btn-light" style="background-color: #e3f2fd;">
+                                            Voir les formations
+                                        </button>
+                                    </a>
+                                </div>
+                                @else
+                                    <div class="col-md-6">
+                                        <a href="{{route('formationListVisiteurs')}}">
+                                            <button class="btn btn-light" style="background-color: #e3f2fd;">
+                                                Voir les formations
+                                            </button>
+                                        </a>
+                                    </div>
+                                @endif
                         </div>
                     </div>
                     <div class="col-md-12">

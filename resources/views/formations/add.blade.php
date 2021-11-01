@@ -15,7 +15,7 @@
         <form method="post" action="{{route('formationStore')}}" enctype="multipart/form-data" >
             @csrf
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="form-group">
                         <label>Nom</label>
                         <input type="text" class="form-control" name="nom" required>
@@ -33,7 +33,18 @@
                         <textarea name="description" class="form-control" rows="5" required ></textarea>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <h3>Catégories</h3>
+                    @foreach($categories as $category)
+                        <div class="form-check form-check-inline col-md-2">
+                            <input type="checkbox" class="form-check-input" id="check-{{$category->id}}"
+                                   name="checkboxCategories[{{$category->id}}]"
+                                   value="{{$category->id}}">
+                            <label for="check-{{$category->id}}" class="form-checek-label">{{$category->name}}</label>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="col-md-3">
                     <label>Image</label>
                     <input type="file" required
                            name="image"

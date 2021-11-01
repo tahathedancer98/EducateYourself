@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FormationStoreRequest;
+use App\Http\Requests\FormationUpdateImageRequest;
 use App\Http\Requests\FormationUpdateRequest;
+use App\Models\Categorie;
 use App\Models\Formation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,10 +16,20 @@ class FormationController extends Controller
         $formations = Formation::orderBy('updated_at','DESC')->get();
         return view('formations.list', compact('formations'));
     }
+    public function indexVisiteurs(){
+        $formations = Formation::orderBy('updated_at','DESC')->get();
+        return view('formations.visiteurs.list', compact('formations'));
+    }
 
     public function details($id){
         $formation = Formation::find($id);
-        return view('formations.details', compact('formation'));
+        $categories = Categorie::all();
+        return view('formations.details', compact(['formation','categories']));
+    }
+    public function detailsFormationVisiteurs($id){
+        $formation = Formation::find($id);
+        $categories = Categorie::all();
+        return view('formations.visiteurs.details', compact(['formation','categories']));
     }
     public function detainsNom(Request $request, $nom){
         $params = $request->all();
@@ -26,25 +38,35 @@ class FormationController extends Controller
         return view();
     }
     public function add(){
-        return view('formations.add');
+        $categories = Categorie::all();
+        return view('formations.add',compact('categories'));
     }
     public function store(FormationStoreRequest $request){
         $params = $request->validated();
         $file = Storage::put('public',$params['image']);
         $params['image'] = substr($file,7);
         $params['user_id'] = auth()->user()->id;
-        Formation::create($params);
+        $formation = Formation::create($params);
+
+        if(!empty($params['checkboxCategories'])){
+            $formation->categories()->attach($params['checkboxCategories']);
+        }
 
         return redirect()->route('formationList');
     }
-    public function update(FormationStoreRequest $request, $id){
+    public function update(FormationUpdateRequest $request, $id){
         $params = $request->validated();
         $formation = Formation::find($id);
         $formation->update($params);
 
-        return redirect()->route('formationList');
+        $formation->categories()->detach();
+        if(!empty($params['checkboxCategories'])){
+            $formation->categories()->attach($params['checkboxCategories']);
+        }
+
+        return redirect()->route('formationDetails', $id);
     }
-    public function updateImage(FormationUpdateRequest $request, $id){
+    public function updateImage(FormationUpdateImageRequest $request, $id){
         $params = $request->validated();
         $formation = Formation::find($id);
         if(Storage::exists("public/$formation->image")){
