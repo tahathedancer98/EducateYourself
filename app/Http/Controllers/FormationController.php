@@ -19,19 +19,18 @@ class FormationController extends Controller
     }
     public function indexVisiteurs(){
         $formations = Formation::orderBy('updated_at','DESC')->get();
-        return view('formations.visiteurs.list', compact('formations'));
+        return view('visiteurs.list', compact('formations'));
     }
-
+    public function detailsFormationVisiteurs($id){
+        $formation = Formation::find($id);
+        $categories = Categorie::all();
+        return view('visiteurs.details', compact(['formation','categories']));
+    }
     public function details($id){
         $formation = Formation::find($id);
         $categories = Categorie::all();
         $chapitres = Chapitre::all();
         return view('formations.details', compact(['formation','categories','chapitres']));
-    }
-    public function detailsFormationVisiteurs($id){
-        $formation = Formation::find($id);
-        $categories = Categorie::all();
-        return view('formations.visiteurs.details', compact(['formation','categories']));
     }
     public function detainsNom(Request $request, $nom){
         $params = $request->all();
