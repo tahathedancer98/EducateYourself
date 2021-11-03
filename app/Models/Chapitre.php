@@ -10,5 +10,5 @@ class Chapitre extends Model
     use HasFactory;
     protected $table = "chapitres";
     public $timestamps = false;
-    protected $fillable = ['name'];
+    protected $fillable = ['name','detailsChapitre'];
 }

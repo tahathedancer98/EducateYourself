@@ -12,5 +12,9 @@
 
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
+        <a
+            href="{{route('categoriesList')}}"
+            class="btn btn-primary"
+        >Retourner à la liste des chapitres</a>
     </div>
 @endsection

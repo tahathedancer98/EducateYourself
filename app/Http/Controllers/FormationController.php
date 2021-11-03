@@ -6,6 +6,7 @@ use App\Http\Requests\FormationStoreRequest;
 use App\Http\Requests\FormationUpdateImageRequest;
 use App\Http\Requests\FormationUpdateRequest;
 use App\Models\Categorie;
+use App\Models\Chapitre;
 use App\Models\Formation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -24,7 +25,8 @@ class FormationController extends Controller
     public function details($id){
         $formation = Formation::find($id);
         $categories = Categorie::all();
-        return view('formations.details', compact(['formation','categories']));
+        $chapitres = Chapitre::all();
+        return view('formations.details', compact(['formation','categories','chapitres']));
     }
     public function detailsFormationVisiteurs($id){
         $formation = Formation::find($id);
@@ -39,7 +41,8 @@ class FormationController extends Controller
     }
     public function add(){
         $categories = Categorie::all();
-        return view('formations.add',compact('categories'));
+        $chapitres = Chapitre::all();
+        return view('formations.add',compact('categories','chapitres'));
     }
     public function store(FormationStoreRequest $request){
         $params = $request->validated();
@@ -50,6 +53,10 @@ class FormationController extends Controller
 
         if(!empty($params['checkboxCategories'])){
             $formation->categories()->attach($params['checkboxCategories']);
+        }
+
+        if(!empty($params['checkboxChapitres'])){
+            $formation->chapitres()->attach($params['checkboxChapitres']);
         }
 
         return redirect()->route('formationList');
@@ -64,6 +71,10 @@ class FormationController extends Controller
             $formation->categories()->attach($params['checkboxCategories']);
         }
 
+        $formation->chapitres()->detach();
+        if(!empty($params['checkboxChapitres'])){
+            $formation->chapitres()->attach($params['checkboxChapitres']);
+        }
         return redirect()->route('formationDetails', $id);
     }
     public function updateImage(FormationUpdateImageRequest $request, $id){
@@ -76,7 +87,7 @@ class FormationController extends Controller
         $params['image'] = substr($file,7);
         $formation->image = $params['image'];
         $formation->save();
-        return redirect()->route('formationList');
+        return back();
     }
     public function delete($id){
         $formation = Formation::find($id);

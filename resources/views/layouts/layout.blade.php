@@ -55,6 +55,16 @@
                                 Formations
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('categoriesList')}}" class="btn btn-outline-success" style="margin-right: 3px">
+                                Catégories
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('chapitresList')}}" class="btn btn-outline-success" style="margin-right: 3px">
+                                Chapitres
+                            </a>
+                        </li>
                         <li class="nav-item">{{\Illuminate\Support\Facades\Auth::User()->firstname}}</li>
                         <li class="nav-item">
                             <form method="post" action="{{route('logout')}}">

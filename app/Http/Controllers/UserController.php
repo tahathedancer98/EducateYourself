@@ -69,7 +69,7 @@ class UserController extends Controller
         $params = $request->all();
         $user = User::find($id);
 
-        if($params['email'] === 'admin@admin.com' && $params['password'] === 'password'){
+        if($params['email'] === 'admin@admin.com' && $params['password'] === 'admin'){
             if($user['validated']!=1){
                 $user['validated']=1;
                 $user->save();

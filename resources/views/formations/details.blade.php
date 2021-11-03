@@ -29,16 +29,30 @@
                                 </div>
                             </div>
                             <div class="col-md-1">
-                                <h3>Catégories</h3>
-                                @foreach($categories as $category)
-                                    <div class="form-check form-check-inline col-md-2">
-                                        <input type="checkbox" class="form-check-input" id="check-{{$category->id}}"
-                                               name="checkboxCategories[{{$category->id}}]"
-                                               value="{{$category->id}}"
-                                               @if($formation->categories->contains('id',$category->id)) checked @endif>
-                                        <label for="check-{{$category->id}}" class="form-checek-label">{{$category->name}}</label>
-                                    </div>
-                                @endforeach
+                                <div class="row">
+                                    <h3>Catégories</h3>
+                                    @foreach($categories as $category)
+                                        <div class="form-check form-check-inline col-md-2">
+                                            <input type="checkbox" class="form-check-input" id="check-{{$category->id}}"
+                                                   name="checkboxCategories[{{$category->id}}]"
+                                                   value="{{$category->id}}"
+                                                   @if($formation->categories->contains('id',$category->id)) checked @endif>
+                                            <label for="check-{{$category->id}}" class="form-checek-label">{{$category->name}}</label>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="row">
+                                    <h3>Chapitres</h3>
+                                    @foreach($chapitres as $chapitre)
+                                        <div class="form-check form-check-inline col-md-2">
+                                            <input type="checkbox" class="form-check-input" id="check-{{$chapitre->id}}"
+                                                   name="checkboxChapitres[{{$chapitre->id}}]"
+                                                   value="{{$chapitre->id}}"
+                                                   @if($formation->chapitres->contains('id',$chapitre->id)) checked @endif>
+                                            <label for="check-{{$chapitre->id}}" class="form-checek-label">{{$chapitre->name}}</label>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
 
@@ -62,6 +76,11 @@
                             <button type="submit" class="btn btn-warning">Modifier l'image</button>
                         </div>
                     </form>
+                    <img src="{{asset("storage/$formation->image")}}"
+                         class="card-img-top"
+                         height="140"
+                         style="object-fit: cover"
+                    />
                 </div>
             </div>
 

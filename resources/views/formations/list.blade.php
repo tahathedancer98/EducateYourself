@@ -9,9 +9,7 @@
 
                     <h1 style="color: darkolivegreen">Toutes les formations</h1>
                     <p>Découvrez un domaine spécifique à travers une formation détaillée qui vous guidera dans votre apprentissage.</p>
-                    @if(\Illuminate\Support\Facades\Auth::check())
-                        <a href="{{route('formationAdd')}}" class="btn btn-primary">Ajouter une nouvelle formation</a>
-                    @endif
+                    <a href="{{route('formationAdd')}}" class="btn btn-primary">Ajouter une nouvelle formation</a>
                     <img src="{{asset('storage/educate.png')}}"
                          class="card-img-top"
                          height="280"
