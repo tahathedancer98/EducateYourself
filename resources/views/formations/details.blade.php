@@ -16,6 +16,10 @@
                                     <input type="text" class="form-control" name="nom" required value="{{$formation->nom}}">
                                 </div>
                                 <div class="form-group">
+                                    <label>Presentation</label>
+                                    <textarea name="presentation" class="form-control" rows="3" required >{{$formation->presentation}}</textarea>
+                                </div>
+                                <div class="form-group">
                                     <label>Prix</label>
                                     <input type="text" class="form-control" name="prix" required value="{{$formation->prix}}">
                                 </div>
@@ -28,11 +32,11 @@
                                     <textarea name="description" class="form-control" rows="5" required >{{$formation->description}}</textarea>
                                 </div>
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-md-4">
                                 <div class="row">
                                     <h3>Catégories</h3>
                                     @foreach($categories as $category)
-                                        <div class="form-check form-check-inline col-md-2">
+                                        <div class="form-check form-check-inline">
                                             <input type="checkbox" class="form-check-input" id="check-{{$category->id}}"
                                                    name="checkboxCategories[{{$category->id}}]"
                                                    value="{{$category->id}}"
@@ -44,7 +48,7 @@
                                 <div class="row">
                                     <h3>Chapitres</h3>
                                     @foreach($chapitres as $chapitre)
-                                        <div class="form-check form-check-inline col-md-2">
+                                        <div class="form-check form-check-inline">
                                             <input type="checkbox" class="form-check-input" id="check-{{$chapitre->id}}"
                                                    name="checkboxChapitres[{{$chapitre->id}}]"
                                                    value="{{$chapitre->id}}"

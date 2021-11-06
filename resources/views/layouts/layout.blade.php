@@ -32,6 +32,13 @@
             background-color: #4a5568;
             color: white;
         }
+        #chapitre{
+            color: white;
+        }
+        #chapitre:hover{
+            background-color: white;
+            color: black;
+        }
     </style>
     <title>EducateYoursef</title>
 </head>

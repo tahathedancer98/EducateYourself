@@ -14,7 +14,7 @@ Route::get('/',[HomeController::class,'index'])->name('homeView');
 // Visiteur
 Route::get('/formations/visiteurs', [FormationController::class, 'indexVisiteurs'])->name('formationListVisiteurs');
 Route::get('/formations/{id}/visiteurs',[FormationController::class,'detailsFormationVisiteurs'])->name('formationDetailVisiteurs');
-Route::get('/formations/visiteurs/chapitre/{id}', [ChapitreController::class,'details'])->name('chapitreFormation');
+Route::get('/formations/{id_formation}/visiteurs/chapitre/{id_chapitre}', [ChapitreController::class,'detailsChapitreVisiteur'])->name('formationChapitreVisiteurs');
 //Routes qui s'occupent de la gestion d'envoie des mails pour la générations des comptes formateurs (get/post)
 Route::get('/contact',[UserController::class,'create'])->name('contact');
 Route::post('/contact', [UserController::class, 'store'])->name('sendMail');

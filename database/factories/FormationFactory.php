@@ -24,7 +24,8 @@ class FormationFactory extends Factory
     {
         return [
             'nom'=>$this->faker->sentence(),
-            'description'=>$this->faker->sentence(10),
+            'presentation' => $this->faker->sentence(6),
+            'description'=>$this->faker->sentence(23),
             'prix'=>12.5,
             'image'=>$this->faker->sentence(10),
             'type'=>$this->faker->sentence(10),

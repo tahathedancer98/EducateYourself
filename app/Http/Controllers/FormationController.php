@@ -23,8 +23,9 @@ class FormationController extends Controller
     }
     public function detailsFormationVisiteurs($id){
         $formation = Formation::find($id);
-        $categories = Categorie::all();
-        return view('visiteurs.details', compact(['formation','categories']));
+        $categories = $formation->categories;
+        $chapitres = $formation->chapitres;
+        return view('visiteurs.details', compact(['formation','categories','chapitres']));
     }
     public function details($id){
         $formation = Formation::find($id);

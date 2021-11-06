@@ -21,6 +21,7 @@ class UserSeed extends Seeder
                 'prenom' => 'Admin',
                 'email' => 'admin@admin.com',
                 'password' => 'admin',
+                'validated' => 1,
                 'is_admin' => '1',
             ],
             [
@@ -28,6 +29,7 @@ class UserSeed extends Seeder
                 'prenom' => 'us1',
                 'email' => 'user1@admin.com',
                 'password' => 'password',
+                'validated' => 1,
                 'is_admin' => null,
             ],
             [
@@ -35,6 +37,7 @@ class UserSeed extends Seeder
                 'prenom' => 'us2',
                 'email' => 'user2@admin.com',
                 'password' => 'password',
+                'validated' => 0,
                 'is_admin' => null,
             ]
         ];
@@ -44,6 +47,7 @@ class UserSeed extends Seeder
                'prenom' => $user['prenom'],
                'email' => $user['email'],
                'password' => Hash::make($user['password']),
+                'validated' => $user['validated'],
                 'is_admin' => $user['is_admin']
             ]);
         }

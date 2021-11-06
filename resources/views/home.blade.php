@@ -48,9 +48,17 @@
                                 @endif
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <p>Développez-vous et améliorez vos compétences dans différentes catégories</p>
-                    </div>
+                    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::User()->is_admin != null)
+                        <div class="col-md-12">
+                            <p>Gestion de formations-catégories-chapitres</p>
+                        </div>
+                    @else
+                        <div class="col-md-12">
+                            <p>Développez-vous et améliorez vos compétences dans différentes catégories</p>
+                        </div>
+                    @endif
+
+
                 </div>
             </div>
             <div class="col-md-6">

@@ -25,9 +25,10 @@ class FormationStoreRequest extends FormRequest
     {
         return [
             'nom' => 'required|string|min:5|max:25',
-            'description' => 'required|string',
+            'presentation' => 'required|string|min:1',
+            'description' => 'required|string|min:1|max:250',
             'prix' => 'required|string|min:1|max:5',
-            'type' => 'required|string',
+            'type' => 'required|string|min:1',
             'image' => 'image',
             'user_id' => 'int',
             'checkboxCategories' => 'nullable',

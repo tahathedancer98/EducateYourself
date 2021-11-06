@@ -29,11 +29,11 @@
                             <img class="card-img-top" alt="" src="{{asset("storage/$formation->image")}}" style="object-fit: cover" height="200">
                             <div class="card-body">
                                 <h5 class="card-title" style="color:#E8D5B5;">{{$formation->nom}}</h5>
-                                <p class="card-text" style="color:#AFA8BA;">{{$formation->description}}</p>
+                                <p class="card-text" style="color:#AFA8BA;">{{$formation->presentation}}</p>
                                 <h6 class="card-title" style="color:#DEEEF3;">Catégories</h6>
-                                <p style="color:#AFA8BA;">/
+                                <p style="color:#AFA8BA;">-
                                     @foreach($formation->categories as $categorie)
-                                        <span>{{$categorie->name}} / </span>
+                                        <span>{{$categorie->name}} - </span>
                                     @endforeach
                                 </p>
                                 <p style="color:#37889F;">{{count($formation->categories)}} Chapitres</p>

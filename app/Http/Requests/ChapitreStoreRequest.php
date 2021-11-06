@@ -24,7 +24,7 @@ class ChapitreStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:5|max:25',
+            'name' => 'required|string|min:3',
             'detailsChapitre' => 'required|string',
         ];
     }

@@ -8,7 +8,11 @@
                 <div class="card">
 
                     <h1 style="color: darkolivegreen">Toutes les formations</h1>
-                    <p>Découvrez un domaine spécifique à travers une formation détaillée qui vous guidera dans votre apprentissage.</p>
+                    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::User()->is_admin != null)
+                        <p></p>
+                    @else
+                        <p>Découvrez un domaine spécifique à travers une formation détaillée qui vous guidera dans votre apprentissage.</p>
+                    @endif
                     <a href="{{route('formationAdd')}}" class="btn btn-primary">Ajouter une nouvelle formation</a>
                     <img src="{{asset('storage/educate.png')}}"
                          class="card-img-top"
@@ -18,7 +22,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                Recherche :
+                Gestion des formations.
             </div>
             @foreach($formations as $formation)
                 <div class="col-md-4">
@@ -35,8 +39,9 @@
                                     <h6 class="card-title" style="color:#DEEEF3;">Catégories</h6>
                                     <div>
                                         @foreach($formation->categories as $categorie)
-                                            <span style="color:#AFA8BA;"> {{$categorie->name}} /</span>
+                                            <span style="color:#AFA8BA;">- {{$categorie->name}} </span>
                                         @endforeach
+                                        <span style="color:#AFA8BA;">-</span>
                                     </div>
                                     <span style="color:#DEEEF3;">{{count($formation->chapitres)}} Chapitre(s)</span>
                                     <div class="d-flex">

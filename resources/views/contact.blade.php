@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="login-form bg-light mt-4 p-4">
-                    <h5>Demande de création de compte</h5>
+                    <h5>Demander un compte</h5>
                     <hr class="mt-4">
 
                     <form method="post" action="{{route('sendMail')}}">
