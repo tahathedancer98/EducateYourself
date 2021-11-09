@@ -11,7 +11,7 @@
     <div class="container" style="background-color: #1a202c;color: white;">
         <div class="row">
             <div class="col-md-9">
-                <h3 style="color: #CDBFE2">{{$formation->nom}} - Chapitre {{$chapitre->id}} (<span style="color: #74D8C3">{{$chapitre->name}}</span>)</h3>
+                <h3 style="color: #CDBFE2">{{$formation->nom}} (<span style="color: #74D8C3">Chapitre {{$chapitre->id}}</span>)</h3>
 
                 <div class="row">
                     <div class="row">
