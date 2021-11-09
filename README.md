@@ -7,9 +7,11 @@ EducateYoursef est une plateforme web, le processus de formation en ligne.
 Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui vont créé des formations, des administrateurs qui gérent tout.
 
 ## Installation : 
-
+(Tous ce qui est en gras il faut le mettre dans la console en ce mettant sur le repertoire du projet)
 - Récupération du projet : <br/>
 	**git clone https://github.com/tahathedancer98/ProjetLaravelM1.git**<br/><br/>
+- Accedez au répértoire du projet : <br/>
+	**cd rojetLaravelM1**<br/><br/>
 - Basculez bien sur la branche master : <br/>
     **git checkout branch master**<br/><br/>
 - Installation du composer : <br/>
@@ -22,7 +24,7 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     DB_USERNAME=[votre username] <br/>
     DB_PASSWORD=[votre mot de passe]** <br/><br/>
 - Rajouter la partie mail dans **.env** : <br/>
-- - **MAIL_MAILER=smtp <br/>
+   **MAIL_MAILER=smtp <br/>
     MAIL_HOST=smtp.mailtrap.io <br/>
     MAIL_PORT=2525 <br/>
     MAIL_USERNAME=[votre username] <br/>
@@ -30,6 +32,9 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     MAIL_ENCRYPTION=tls <br/>
     MAIL_FROM_ADDRESS=null <br/>
     MAIL_FROM_NAME="${APP_NAME}"** <br/><br/>
-
-## Laravel Sponsors
+- Migration (Création des tables + remplir les données): 
+    **php artisan migrate:fresh --seed**
+    
+## Lancement de l'application
+- **php artisan serve**
 
