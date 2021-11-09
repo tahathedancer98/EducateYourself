@@ -7,6 +7,7 @@ EducateYoursef est une plateforme web, le processus de formation en ligne.
 Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui vont créé des formations, des administrateurs qui gérent tout.
 ## MCD : 
 <img src="./MCD.png">
+
 ## Installation :
 (Tous ce qui est en **gras** il faut le mettre dans la console)
 - Récupération du projet : <br/>
