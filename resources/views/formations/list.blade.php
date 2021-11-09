@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @if(sizeof($formations) && \Illuminate\Support\Facades\Auth::check())
+    @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::User()->validated != 0)
         <div class="row" style="margin:5em;">
             <div class="col-md-6">
                 <div class="card">
