@@ -5,8 +5,8 @@
 EducateYoursef est une plateforme web, le processus de formation en ligne.
 
 Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui vont créé des formations, des administrateurs qui gérent tout.
-
-<<<<<<< HEAD
+## MCD : 
+<img src="./MCD.png">
 ## Installation :
 (Tous ce qui est en **gras** il faut le mettre dans la console)
 - Récupération du projet : <br/>
@@ -36,7 +36,6 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - Migration (Création des tables + remplir les données): <br/>
   **php artisan migrate:fresh --seed**<br/><br/>
 
-=======
 ## Installation : 
 (Tous ce qui est en **gras** il faut le mettre dans la console)
 - Récupération du projet : <br/>
@@ -66,7 +65,6 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - Migration (Création des tables + remplir les données): <br/>
     **php artisan migrate:fresh --seed**<br/><br/>
     
->>>>>>> fd390c02e9a3ca9a73f49cb881193e87cf9bea7c
 ## Lancement de l'application
 - **php artisan serve**<br/>
 ## Les comptes de test
