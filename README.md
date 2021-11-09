@@ -37,7 +37,6 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     
 ## Lancement de l'application
 - **php artisan serve**<br/>
-- 
 ## Les comptes de test
 - **Administrateur**<br/>
     - Email : admin@admin.com <br/>
