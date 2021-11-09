@@ -32,9 +32,16 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     MAIL_ENCRYPTION=tls <br/>
     MAIL_FROM_ADDRESS=null <br/>
     MAIL_FROM_NAME="${APP_NAME}"** <br/><br/>
-- Migration (Création des tables + remplir les données): 
-    **php artisan migrate:fresh --seed**
+- Migration (Création des tables + remplir les données): <br/>
+    **php artisan migrate:fresh --seed**<br/><br/>
     
 ## Lancement de l'application
-- **php artisan serve**
-
+- **php artisan serve**<br/>
+- 
+## Les comptes de test
+- **Administrateur**<br/>
+    - Email : admin@admin.com <br/>
+    - Mot de passe : admin <br/><br/>
+- **Formateur 1** <br/>
+    - Email : user1@user.com <br/>
+    - Mot de passe : password
