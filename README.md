@@ -7,7 +7,7 @@ EducateYoursef est une plateforme web, le processus de formation en ligne.
 Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui vont créé des formations, des administrateurs qui gérent tout.
 
 ## Installation : 
-(Tous ce qui est en gras il faut le mettre dans la console en ce mettant sur le repertoire du projet)
+(Tous ce qui est en **gras** il faut le mettre dans la console)
 - Récupération du projet : <br/>
 	**git clone https://github.com/tahathedancer98/ProjetLaravelM1.git**<br/><br/>
 - Accedez au répértoire du projet : <br/>
