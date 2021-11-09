@@ -20,7 +20,7 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     DB_PORT=3306 <br/>
     DB_DATABASE=[Le nom de votre base de données] <br/>
     DB_USERNAME=[votre username] <br/>
-    DB_PASSWORD=[votre mot de passe] ** <br/><br/>
+    DB_PASSWORD=[votre mot de passe]** <br/><br/>
 - Rajouter la partie mail dans **.env** : <br/>
 - - **MAIL_MAILER=smtp <br/>
     MAIL_HOST=smtp.mailtrap.io <br/>
