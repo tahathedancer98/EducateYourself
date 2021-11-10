@@ -8,10 +8,11 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 ## MCD : 
 - Un Admin peut <br/>
     - Ajouter/modifier/supprimer des formations/catégories/chapitres <br/>
-    - Valider les comptes des visiteurs pour qu'il deviennent des formateurs <br/><br/>
+    - Valider les comptes des visiteurs pour qu'il deviennent des formateurs <br/>
+    - Gérer son compte <br/>
 
-- Un Formateur peut gérer ses formations (Ajouter / Modifier / Supprimer). <br/>
-- Un visiteur peut visionner toutes les formations et naviguer entre ses chapitres. <br/>
+- Un Formateur peut gérer ses formations (Ajouter / Modifier / Supprimer) et gérer son compte <br/>
+- Un visiteur peut visionner toutes les formations et naviguer entre ses chapitre <br/>
 <img src="./MCD.png">
 
 ## Installation :
