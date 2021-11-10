@@ -53,3 +53,4 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - **Formateur 1** <br/>
     - Email : user1@user.com <br/>
     - Mot de passe : password
+**https://github.com/botpress/botpress/issues/1352**
