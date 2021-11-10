@@ -6,7 +6,7 @@ EducateYoursef est une plateforme web, le processus de formation en ligne.
 
 Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui vont créé des formations, des administrateurs qui gérent tout.
 ## MCD : 
-- Une Admin peut <br/>
+- Un Admin peut <br/>
     - Ajouter/modifier/supprimer des formations/catégories/chapitres <br/>
     - Valider les comptes des visiteurs pour qu'il deviennent des formateurs <br/><br/>
 
