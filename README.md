@@ -20,7 +20,7 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - Récupération du projet : <br/>
   **git clone https://github.com/tahathedancer98/ProjetLaravelM1.git**<br/><br/>
 - Accedez au répértoire du projet : <br/>
-  **cd rojetLaravelM1**<br/><br/>
+  **cd ProjetLaravelM1**<br/><br/>
 - Basculez bien sur la branche master : <br/>
   **git checkout branch master**<br/><br/>
 - Installation du composer : <br/>
