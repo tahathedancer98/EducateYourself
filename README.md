@@ -12,7 +12,7 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     - Gérer son compte <br/>
 
 - Un Formateur peut gérer ses formations (Ajouter / Modifier / Supprimer) et gérer son compte <br/>
-- Un visiteur peut visionner toutes les formations et naviguer entre ses chapitre <br/>
+- Un visiteur peut visionner toutes les formations et naviguer entre ses chapitres <br/>
 <img src="./MCD.png">
 
 ## Installation :
@@ -51,6 +51,6 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     - Email : admin@admin.com <br/>
     - Mot de passe : admin <br/><br/>
 - **Formateur 1** <br/>
-    - Email : user1@user.com <br/>
+    - Email : user@user.com <br/>
     - Mot de passe : password
 **https://github.com/botpress/botpress/issues/1352**
