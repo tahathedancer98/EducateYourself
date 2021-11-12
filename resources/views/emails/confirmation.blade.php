@@ -13,22 +13,10 @@
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="login-form bg-light mt-4 p-4">
-                    <h5>Connectez-vous pour confirmer l'utilisateur</h5>
                     <hr class="mt-4">
                     <form method="post" action="{{route('sendConfirmUser',['id'=>$id,'confirmation_token'=>$confirmation_token])}}">
                         @csrf
-                        {{-- Email --}}
-                        <div class="form-group">
-                            Email</label>
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
-                        {{-- motDePasse --}}
-                        <div class="form-group">
-                            Mot de passe</label>
-                            <input type="password" class="form-control" name="password" required>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                        <button type="submit" class="btn btn-primary offset-md-3">Confirmer le compte</button>
                     </form>
                 </div>
             </div>

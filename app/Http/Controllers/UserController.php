@@ -72,22 +72,18 @@ class UserController extends Controller
         $params = $request->all();
         $user = User::find($id);
 
-        if($params['email'] === 'admin@admin.com' && $params['password'] === 'admin'){
-            if($user['validated']!=1){
-                $user['validated']=1;
-                $user->save();
-                $num = 2;
-                Mail::to($user->email)
-                    ->send(new ContactMail($num,$user));
+        if($user['validated']!=1){
+            $user['validated']=1;
+            $user->save();
+            $num = 2;
+            Mail::to($user->email)
+                ->send(new ContactMail($num,$user));
 
-                return view('emails.confirmation_valide');
-            }else{
-                return back()
-                    ->with('error',"L'utilisateur a été déjà confirmé");
-            }
+            return view('emails.confirmation_valide');
+        }else{
+            return back()
+                ->with('error',"L'utilisateur a été déjà confirmé");
         }
-        return back()
-            ->with('error',"Veuillez saisir les coordonnées de l'admin");
     }
     public function profil($id){
         $user = User::find($id);

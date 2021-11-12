@@ -49,15 +49,18 @@
 </head>
 <body>
     Hello admin,<br><br>
-    Vous avez reçu une nouvelle demande.<br><br>
+    Vous avez reçu une nouvelle demande de création de compte.<br><br>
 
     <div>
         Nom : {{$nom}},<br><br>
         Prénom : {{$prenom}},</b><br>
-        Souhaite devenir un(e) formateur/formatrice. <br>
-        Si vous acceptez, veuillez cliquer sur le boutton ci-dessous.
     </div>
     <br><br>
+    <a href="{{route('login')}}">
+        <button>
+            Connectez-vous d'abord
+        </button>
+    </a>
     <a href="{{$lien}}">
         <button>
             Lien de confirmation
