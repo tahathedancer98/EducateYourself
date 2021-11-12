@@ -80,12 +80,18 @@
 
                         <li class="nav-item">{{\Illuminate\Support\Facades\Auth::User()->firstname}}</li>
                         <li class="nav-item">
+                            <a href="{{route('profilRoute',\Illuminate\Support\Facades\Auth::User()->id)}}" class="btn btn-outline-success" style="margin-right: 3px">
+                                Profil
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <form method="post" action="{{route('logout')}}">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Déconnexion</button>
                             </form>
                         </li>
                     </ul>
+
                 @else
                     <ul class="nav navbar-nav navbar-left">
                         <li>

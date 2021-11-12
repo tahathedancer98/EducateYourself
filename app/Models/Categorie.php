@@ -12,4 +12,8 @@ class Categorie extends Model
     protected $table = "categories";
     public $timestamps = false;
     protected $fillable = ['name'];
+
+    public function formations(){
+        return $this->belongsToMany(Formation::class,'formations_categories','categorie','formation');
+    }
 }

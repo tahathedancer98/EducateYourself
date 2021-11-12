@@ -26,6 +26,7 @@ class FormationStoreRequest extends FormRequest
         return [
             'nom' => 'required|string|min:5|max:25',
             'presentation' => 'required|string|min:1',
+            'duree' => 'required|int',
             'description' => 'required|string|min:1|max:250',
             'prix' => 'required|string|min:1|max:5',
             'type' => 'required|string|min:1',

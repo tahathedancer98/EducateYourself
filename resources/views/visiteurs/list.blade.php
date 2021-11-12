@@ -19,9 +19,24 @@
                 <div class="header" id="headerVisiteurs">
                     <p>Apprenez GRATUITEMENT.</p>
                 </div>
+                <div>
+                    <a href="{{route('recherche')}}" class="btn btn-success">Rechercher des formations</a>
+                </div>
             </div>
         </div>
         <div class="row" style="margin:5em;">
+
+            @if(!empty($recherche))
+                <div class="row"><div class="offset-md-6 col-md-4">{{$recherche}}</div></div>
+                <div class="row">
+                    <div class="offset-md-6 col-md-4">
+                        <a
+                            href="{{route('formationListVisiteurs')}}"
+                            class="btn btn-primary"
+                        >Retourner à la liste des formations</a>
+                    </div>
+                </div>
+            @endif
             @foreach($formations as $formation)
                 <div class="col-md-4">
                     <div class="card" id="listCards">
@@ -37,7 +52,9 @@
                                     @endforeach
                                 </p>
                                 <p style="color:#37889F;">{{count($formation->categories)}} Chapitres</p>
+                                <div style="color:#CDBFE2;">{{$formation->duree}} heure(s)</div>
                             </div>
+
                         </a>
                     </div>
                 </div>

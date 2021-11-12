@@ -18,9 +18,14 @@ Route::get('/formations/{id_formation}/visiteurs/chapitre/{id_chapitre}', [Chapi
 //Routes qui s'occupent de la gestion d'envoie des mails pour la générations des comptes formateurs (get/post)
 Route::get('/contact',[UserController::class,'create'])->name('contact');
 Route::post('/contact', [UserController::class, 'store'])->name('sendMail');
+//Recherche
+Route::get('formations/recherche',[FormationController::class, 'recherche'])->name('recherche');
+Route::get('formations/recherche/nom',[FormationController::class, 'rechercheNom'])->name('rechercheNom');
+Route::get('formations/recherche/type',[FormationController::class, 'rechercheType'])->name('rechercheType');
+Route::get('formations/recherche/categorie',[FormationController::class, 'rechercheCategorie'])->name('rechercheCategorie');
 
 
-// Formateur + Admin pour ne pas écrire le code 2 fois
+// Formateur + Admin (pour ne pas écrire le code 2 fois)
 function formateurEtAdmin(): void
 {
     // Pour la partie Formations -> ajouter/modifier/supprimer
@@ -30,8 +35,12 @@ function formateurEtAdmin(): void
     Route::put('/formations/{id}', [FormationController::class, 'update'])->name('formationUpdate');
     Route::delete('/formations/{id}', [FormationController::class, 'delete'])->name('formationDelete');
     Route::get('/formations/{id}', [FormationController::class, 'details'])->name('formationDetails');
-    Route::put('/formations/{id}/image', [FormationController::class, 'updateImage'])->name('formationUpdateImage');
 
+
+    Route::put('/formations/{id}/image', [FormationController::class, 'updateImage'])->name('formationUpdateImage');
+    Route::get('/profil/{id}',[UserController::class, 'profil'])->name('profilRoute');
+    Route::put('/profil/{id}/password',[UserController::class, 'updatePassword'])->name('editPassword');
+    Route::put('/profil/{id}/profil',[UserController::class, 'updateProfil'])->name('editProfil');
 }
 
 // Les routes que pour l'admin

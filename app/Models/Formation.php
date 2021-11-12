@@ -9,7 +9,7 @@ class Formation extends Model
 {
     use HasFactory;
     protected $table = 'formations';
-    protected $fillable = ['nom', 'presentation','description', 'prix', 'image','type','user_id'];
+    protected $fillable = ['nom', 'presentation','duree','description', 'prix', 'image','type','user_id'];
 
     public function categories(){
         return $this->belongsToMany(Categorie::class,'formations_categories','formation','categorie');

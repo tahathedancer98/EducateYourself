@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeed::class,
             FormationSeeder::class,
+            ChapitreSeed::class,
+            CategorieSeed::class,
+            FormationCategorieSeed::class,
+            FormationChapitreSeed::class
         ]);
     }
 }

@@ -27,7 +27,7 @@ class UserSeed extends Seeder
             [
                 'nom' => 'User1',
                 'prenom' => 'us1',
-                'email' => 'user1@admin.com',
+                'email' => 'user@user.com',
                 'password' => 'password',
                 'validated' => 1,
                 'is_admin' => null,
@@ -35,9 +35,9 @@ class UserSeed extends Seeder
             [
                 'nom' => 'User2',
                 'prenom' => 'us2',
-                'email' => 'user2@admin.com',
+                'email' => 'user2@user.com',
                 'password' => 'password',
-                'validated' => 0,
+                'validated' => 1,
                 'is_admin' => null,
             ]
         ];

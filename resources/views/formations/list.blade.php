@@ -6,7 +6,6 @@
         <div class="row" style="margin:5em;">
             <div class="col-md-6">
                 <div class="card">
-
                     <h1 style="color: darkolivegreen">Toutes les formations</h1>
                     @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::User()->is_admin != null)
                         <p></p>
@@ -44,6 +43,7 @@
                                         <span style="color:#AFA8BA;">-</span>
                                     </div>
                                     <span style="color:#DEEEF3;">{{count($formation->chapitres)}} Chapitre(s)</span>
+                                    <div style="color:#CDBFE2;">{{$formation->duree}} heure(s)</div>
                                     <div class="d-flex">
                                         <form method="post" action="{{route('formationDelete', $formation->id)}}" >
                                             @csrf

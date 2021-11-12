@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Storage;
 class FormationController extends Controller
 {
     public function index(){
-        $formations = Formation::orderBy('updated_at','DESC')->get();
+        $current_user = auth()->user();
+        if(auth()->user()->is_admin != null){
+            $formations = Formation::all();
+        }else{
+            $formations = Formation::where('user_id',$current_user->id)->get();
+        }
+        //dd($formations);
         return view('formations.list', compact('formations'));
     }
     public function indexVisiteurs(){
@@ -32,12 +38,6 @@ class FormationController extends Controller
         $categories = Categorie::all();
         $chapitres = Chapitre::all();
         return view('formations.details', compact(['formation','categories','chapitres']));
-    }
-    public function detainsNom(Request $request, $nom){
-        $params = $request->all();
-        $formation = Formation::where('nom',$nom);
-        dd($formation);
-        return view();
     }
     public function add(){
         $categories = Categorie::all();
@@ -94,5 +94,25 @@ class FormationController extends Controller
         $formation->delete();
 
         return redirect()->route('formationList');
+    }
+
+    public function recherche(){
+        return view('visiteurs.recherche');
+    }
+    public function rechercheNom(Request $request){
+        $recherche = "Recherche par Nom";
+        $formations = Formation::where('nom','=',$request->nom)->get();
+        return view('visiteurs.list', compact(['formations','recherche']));
+        //return view('visiteurs.details', compact(['formation','categories','chapitres']));
+    }
+    public function rechercheType(Request $request){
+        $recherche = "Recherche par Type";
+        $formations = Formation::where('type','=',$request->type)->get();
+        return view('visiteurs.list', compact(['formations','recherche']));
+    }
+    public function rechercheCategorie(Request $request){
+        $recherche = "Recherche par Catégorie";
+        $formations = Categorie::find(1)->formations()->get();
+        return view('visiteurs.list', compact(['formations','recherche']));
     }
 }
