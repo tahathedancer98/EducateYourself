@@ -6,6 +6,13 @@ EducateYoursef est une plateforme web, le processus de formation en ligne.
 
 Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui vont créé des formations, des administrateurs qui gérent tout.
 ## MCD : 
+- Un Admin peut <br/>
+    - Ajouter/modifier/supprimer des formations/catégories/chapitres <br/>
+    - Valider les comptes des visiteurs pour qu'il deviennent des formateurs <br/>
+    - Gérer son compte <br/>
+
+- Un Formateur peut gérer ses formations (Ajouter / Modifier / Supprimer) et gérer son compte <br/>
+- Un visiteur peut visionner toutes les formations et naviguer entre ses chapitre <br/>
 <img src="./MCD.png">
 
 ## Installation :
@@ -13,7 +20,7 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - Récupération du projet : <br/>
   **git clone https://github.com/tahathedancer98/ProjetLaravelM1.git**<br/><br/>
 - Accedez au répértoire du projet : <br/>
-  **cd rojetLaravelM1**<br/><br/>
+  **cd ProjetLaravelM1**<br/><br/>
 - Basculez bien sur la branche master : <br/>
   **git checkout branch master**<br/><br/>
 - Installation du composer : <br/>
@@ -46,3 +53,4 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - **Formateur 1** <br/>
     - Email : user1@user.com <br/>
     - Mot de passe : password
+**https://github.com/botpress/botpress/issues/1352**
