@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @if(count($chapitres) > 0)
+                    @if(count($formation->chapitres) > 0)
                         <a href="{{route('formationChapitreVisiteurs',[$formation->id,'0'])}}" class="btn btn-success">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
                                 <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
@@ -64,8 +64,8 @@
             <div class="col-md-5" style="">
                 <h3 style="color: #CDBFE2">Chapitres</h3>
                 <div style="display: flex;flex-direction: column;align-items: flex-start;border: 0.4px solid #CDBFE2;">
-                    @if(count($chapitres) > 0)
-                        @foreach($chapitres as $index => $chapitre)
+                    @if(count($formation->chapitres) > 0)
+                        @foreach($formation->chapitres as $index => $chapitre)
                             <a href="{{route('formationChapitreVisiteurs',[$formation->id,$index])}}" style="text-decoration: none" id="chapitre">{{$index+1}} : {{$chapitre->name}}</a>
                         @endforeach
                     @else

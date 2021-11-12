@@ -39,7 +39,7 @@
             @endif
             @foreach($formations as $formation)
                 <div class="col-md-4">
-                    <div class="card" id="listCards">
+                    <div class="card" id="listCards" style="margin: 0.5em;">
                         <a href="{{route('formationDetailVisiteurs', $formation->id)}}" style="text-decoration:none;">
                             <img class="card-img-top" alt="" src="{{asset("storage/$formation->image")}}" style="object-fit: cover" height="200">
                             <div class="card-body">
@@ -51,7 +51,7 @@
                                         <span>{{$categorie->name}} - </span>
                                     @endforeach
                                 </p>
-                                <p style="color:#37889F;">{{count($formation->categories)}} Chapitres</p>
+                                <p style="color:#37889F;">{{count($formation->chapitres)}} Chapitres</p>
                                 <div style="color:#CDBFE2;">{{$formation->duree}} heure(s)</div>
                             </div>
 
