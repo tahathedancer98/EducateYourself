@@ -13,9 +13,9 @@
                         <p>Découvrez un domaine spécifique à travers une formation détaillée qui vous guidera dans votre apprentissage.</p>
                     @endif
                     <a href="{{route('formationAdd')}}" class="btn btn-primary">Ajouter une nouvelle formation</a>
-                    <img src="{{asset('storage/educate.png')}}"
+                    <img src="http://cdn.onlinewebfonts.com/svg/img_534910.png"
                          class="card-img-top"
-                         height="280"
+                         height="360"
                          style="object-fit: cover"
                     >
                 </div>

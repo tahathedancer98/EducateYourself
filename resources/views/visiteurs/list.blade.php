@@ -8,9 +8,9 @@
                 <div class="card">
                     <h1 style="color: darkolivegreen">Toutes les formations</h1>
                     <p>Découvrez un domaine spécifique à travers une formation détaillée qui vous guidera dans votre apprentissage.</p>
-                    <img src="{{asset('storage/educate.png')}}"
+                    <img src="http://cdn.onlinewebfonts.com/svg/img_534910.png"
                          class="card-img-top"
-                         height="280"
+                         height="360"
                          style="object-fit: cover"
                     >
                 </div>

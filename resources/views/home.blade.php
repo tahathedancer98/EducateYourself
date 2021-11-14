@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img src="{{asset('storage/form.png')}}"
+                <img src="https://www.laboitenumerique.fr/wp-content/uploads/2018/07/746930-education/746930-education/png/060-study-2.png"
                      class="card-img-top"
                      style="object-fit: cover">
             </div>
