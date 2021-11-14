@@ -62,7 +62,7 @@
                         </div>
                     @else
                         <div class="col-md-12">
-                            <p>Développez-vous et améliorez vos compétences dans différentes catégories</p>
+                            <p>Développez-vous et améliorez vos compétences dans différentes domaines</p>
                         </div>
                     @endif
 
