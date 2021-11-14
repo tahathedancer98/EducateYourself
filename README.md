@@ -22,7 +22,7 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - Accedez au répértoire du projet : <br/>
   **cd EducateYourself**<br/><br/>
 - Basculez bien sur la branche master : <br/>
-  **git checkout branch master**<br/><br/>
+  **git checkout master**<br/><br/>
 - Installation du composer : <br/>
   **composer update**<br/><br/>
 - Copiez le fichier **.env.example** et collez le, changez son nom en mettant **.env** et mettez les valeurs suivantes en fonction de vos paramètres de base de données : <br/>
