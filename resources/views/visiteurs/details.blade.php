@@ -3,53 +3,63 @@
 @section('content')
     <div class="container" style="background-color: #1a202c;color: white;">
         <div class="row">
-            <div class="col-md-8" >
+            <div class="col-md-12" >
                 <h1>Apprendre : {{$formation->nom}}</h1>
                 <div class="row">
-                    <div class="row">
-                        <div class="col-md-8"><p></p></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8"><p></p></div>
-                    </div>
-                </div>
-                <div class="row">
-                        <div class="col-md-8">
-                            <h3 style="color: #CDBFE2">Présentation<br></h3>
-                            <span>{{$formation->presentation}}</span>
-                        </div>
-                    @if(count($categories) > 0)
-                        <div class="row">
-                            <div class="col-md-5">
-                                <span style="color: #CDBFE2">Catégories </span>:
-                                @foreach($categories as $category)
-                                    <label class="form-checek-label"> {{$category->name}},</label>
-                                @endforeach
+                    <div class="col-md-6">
+                        <div class="row" style="margin: 1em;">
+                            <div class="col-md-6">
+                                <h3 style="color: #CDBFE2">Présentation<br></h3>
+                                <span>{{$formation->presentation}}</span>
                             </div>
                         </div>
-                    @endif
-                    <div class="row">
-                        <div class="col-md-5">
-                            <span style="color: #CDBFE2">Type </span>: {{$formation->type}}
+                        <div class="row" style="margin: 1em;">
+                            @if(count($categories) > 0)
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <span style="color: #CDBFE2">Catégories </span>:
+                                        @foreach($categories as $category)
+                                            <label class="form-checek-label"> {{$category->name}},</label>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                        <div class="row" style="margin: 1em;">
+                            <div class="col-md-5">
+                                <span style="color: #CDBFE2">Type </span>: {{$formation->type}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 1em;">
+                            <h3 style="color: #CDBFE2">Description</h3>
+                            <div>
+                                {{$formation->description}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6" style="">
+                                <h3 style="color: #CDBFE2">Chapitres</h3>
+                                <div style="display: flex;flex-direction: column;align-items: flex-start;border: 0.4px solid #CDBFE2;">
+                                    @if(count($formation->chapitres) > 0)
+                                        @foreach($formation->chapitres as $index => $chapitre)
+                                            <a href="{{route('formationChapitreVisiteurs',[$formation->id,$index])}}" style="text-decoration: none" id="chapitre">{{$index+1}} : {{$chapitre->name}}</a>
+                                        @endforeach
+                                    @else
+                                        <div>Il n'existe pas de chapitres dans cette formation pour le moment.</div>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            @if($formation->image != "")
-                <div class="col-md-4">
-                    <img class="card-img-top" alt="" src="{{asset("storage/$formation->image")}}">
-                </div>
-            @endif
         </div>
         <div class="row">
             <div class="col-md-7">
-                <div class="row">
-                    <h3 style="color: #CDBFE2">Description</h3>
-                    <div>
-                        {{$formation->description}}
-                    </div>
-                </div>
                 <div class="row">
                     @if(count($formation->chapitres) > 0)
                         <a href="{{route('formationChapitreVisiteurs',[$formation->id,'0'])}}" class="btn btn-success">
@@ -61,18 +71,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-md-5" style="">
-                <h3 style="color: #CDBFE2">Chapitres</h3>
-                <div style="display: flex;flex-direction: column;align-items: flex-start;border: 0.4px solid #CDBFE2;">
-                    @if(count($formation->chapitres) > 0)
-                        @foreach($formation->chapitres as $index => $chapitre)
-                            <a href="{{route('formationChapitreVisiteurs',[$formation->id,$index])}}" style="text-decoration: none" id="chapitre">{{$index+1}} : {{$chapitre->name}}</a>
-                        @endforeach
-                    @else
-                        <div>Il n'existe pas de chapitres dans cette formation pour le moment.</div>
-                    @endif
-                </div>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-md-9"></div>

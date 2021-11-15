@@ -15,9 +15,9 @@
 
                 <div class="row">
                     <div class="row">
-
-                        <div class="col-md-6" style="padding:1em;color:black;background-color: white;border:1px solid #CDBFE2">
+                        <div class="col-md-9" style="padding:1em;color:black;background-color: white;border:1px solid #CDBFE2">
                             <h6 style="color: #74D8C3;">Contenue du chapitre</h6>
+                            <hr class="mt-4">
                             {{$chapitre->detailsChapitre}}
                         </div>
                     </div>
