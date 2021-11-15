@@ -30,7 +30,6 @@
                      height="260"
                      style="object-fit: cover"
                 >
-
             </div>
         </div>
         <div class="row">
