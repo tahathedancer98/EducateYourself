@@ -64,3 +64,8 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
     - Modifier son profil.
 - **Visiteur** :
     - Visualiser les formations, et suivre une formation en naviguant dans ses chapitres.
+
+
+## Des précisions :
+- Au moment du lancement de l'application pour la premiere fois, il faut juste modifier les images des 3 formations de bases.
+- Le reste marche bien.
