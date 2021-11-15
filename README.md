@@ -67,5 +67,5 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 
 
 ## Des précisions :
-- Au moment du lancement de l'application pour la premiere fois, il faut juste modifier les images des 3 formations de bases.
+- Au moment du lancement de l'application pour la premiere fois, il faut juste modifier les images des 3 formations de bases en tant qu'admin.
 - Le reste marche bien.
