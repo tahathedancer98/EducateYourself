@@ -53,3 +53,14 @@ Tout le monde peut l'utiliser, des visiteurs non connecté, des formateurs qui v
 - **Formateur 1** <br/>
     - Email : user@user.com <br/>
     - Mot de passe : password
+
+## Les fonctionnalités :
+- **Admin** : 
+    - Créer, modifier, supprimer des formations, catégories, chapitres.
+    - Modifier son profil.
+
+- **Formateur** :
+    - Créer, modifier, supprimer une formation.
+    - Modifier son profil.
+- **Visiteur** :
+    - Visualiser les formations, et suivre une formation en naviguant dans ses chapitres.
